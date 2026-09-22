@@ -1,7 +1,9 @@
-const CACHE = "sri-yantra-v1";
+const CACHE = "sri-yantra-v2";
 const ASSETS = [
   "./",
   "index.html",
+  "about.html",
+  "css/about.css",
   "css/common.css",
   "css/core.css",
   "css/densities.css",

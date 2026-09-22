@@ -246,6 +246,13 @@ button:disabled {
 .footer {
   margin-top: 40px;
 }
+.footer p {
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+.footer p.copyright {
+  margin-top: 20px;
+}
 
 @media only screen and (max-width: 560px) {
   h1 {
