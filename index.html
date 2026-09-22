@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Yantra</title>
+    <meta
+      name="description"
+      content="Sri Yantra generator: nine interlocking triangles with lotus petals, circles and gates, drawn to scale. Pick colors, build it up triangle by triangle, and download it as SVG or PNG. Free, works offline."
+    />
+    <meta name="author" content="Olivier Giulieri" />
+    <link rel="canonical" href="https://evoluteur.github.io/sri-yantra/" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="theme-color" content="#1a212d" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Overpass"
+    />
+    <link id="omg-core-css" rel="stylesheet" href="css/core.css" />
+    <link id="omg-theme-css" rel="stylesheet" href="css/themes/dark/dark.css" />
+    <link id="omg-density-css" rel="stylesheet" href="css/densities.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/yantra.css" />
+
+    <script src="js/omg.js"></script>
+    <script src="js/yantra-data.js"></script>
+    <script src="js/yantra.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+      }
+    </script>
+  </head>
+
+  <body onload="setupPage('home'); initYantra();" id="omg-body">
+    <div id="omg-header">
+      <h1>Sri Yantra</h1>
+      <div id="omg-theme-picker"></div>
+    </div>
+    <h2>Nine triangles around a point</h2>
+    <div class="content">
+      <p class="tagline">
+        The Sri Yantra is the best known of the sacred diagrams of the Indian
+        tantric traditions: four upward triangles and five downward ones,
+        interlaced around a central point and ringed by lotus petals, circles
+        and a gated square. This one is drawn to scale in your browser. Change
+        the colors, build it up one triangle at a time, and save it.
+      </p>
+
+      <div class="layout">
+        <div class="stage">
+          <div id="yantra" class="canvas-box"></div>
+          <p class="note" id="yantra-note"></p>
+        </div>
+
+        <div class="side">
+          <div class="panel">
+            <h3>Build it up</h3>
+            <div class="ctl">
+              <label for="tri-n">Triangles drawn, smallest first</label><span class="val" id="tri-n-val"></span>
+              <input type="range" id="tri-n" min="0" max="9" step="1" />
+            </div>
+            <div class="chips" id="which-chips" role="group" aria-label="Which triangles"></div>
+            <div class="btns"><button type="button" id="play" class="ghost">Build it up</button></div>
+          </div>
+
+          <div class="panel">
+            <h3>Layers</h3>
+            <label class="opt"><input type="checkbox" id="l-bindu" /> Bindu (the central point)</label>
+            <label class="opt"><input type="checkbox" id="l-tri" /> The nine triangles</label>
+            <label class="opt"><input type="checkbox" id="l-lotus8" /> Eight-petal lotus</label>
+            <label class="opt"><input type="checkbox" id="l-lotus16" /> Sixteen-petal lotus</label>
+            <label class="opt"><input type="checkbox" id="l-circles" /> Circles</label>
+            <label class="opt"><input type="checkbox" id="l-gates" /> Square with four gates</label>
+          </div>
+
+          <div class="panel">
+            <h3>Look</h3>
+            <div class="chips" id="pal-chips" role="group" aria-label="Colors"></div>
+            <div class="chips" id="fill-chips" role="group" aria-label="Fill"></div>
+            <div class="ctl">
+              <label for="weight">Line weight</label><span class="val" id="weight-val"></span>
+              <input type="range" id="weight" min="4" max="30" step="1" />
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Save</h3>
+            <div class="btns">
+              <button type="button" id="export-png">Download PNG</button>
+              <button type="button" id="export-svg" class="ghost">Download SVG</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout info">
+        <div class="side wide">
+          <div class="panel">
+            <h3>The nine enclosures</h3>
+            <p class="note">
+              Tradition reads the yantra as nine enclosures, called
+              <em>avaranas</em>, from the outside in.
+            </p>
+            <ol class="enclosures" id="enclosures"></ol>
+          </div>
+        </div>
+        <div class="side wide">
+          <div class="panel">
+            <h3>Shiva and Shakti</h3>
+            <p class="note">
+              The four upward triangles are usually read as Shiva, the
+              masculine principle, and the five downward ones as Shakti, the
+              feminine. They meet at the bindu, where the two are said to be
+              one. Meanings vary between lineages, and there are several
+              schools of drawing.
+            </p>
+            <p class="note">
+              This drawing takes its triangle coordinates from a published
+              construction. The two largest triangles have their corners on the
+              circle, and the figure is symmetric left to right. Practitioners may prefer
+              other proportions, and a hand-drawn yantra is a matter of
+              practice and not just geometry.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer">
+        &#169; 2026
+        <a href="https://evoluteur.github.io/">Olivier Giulieri</a> ·
+        <a href="https://github.com/evoluteur/sri-yantra">Open source</a> ·
+        Triangle coordinates from
+        <a href="https://texample.net/tikz/examples/sri-yantra/">TeXample</a> (CC BY-SA 4.0)
+      </p>
+    </div>
+  </body>
+</html>

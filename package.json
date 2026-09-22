@@ -1,0 +1,26 @@
+{
+  "name": "sri-yantra",
+  "version": "1.0.0",
+  "description": "Sri Yantra generator: the nine interlocking triangles with their lotus petals, circles and gates, drawn to scale, colorable, and exportable as SVG or PNG.",
+  "repository": "github:evoluteur/sri-yantra",
+  "homepage": "https://evoluteur.github.io/sri-yantra/",
+  "copyright": "(c) 2026 Olivier Giulieri",
+  "author": "Olivier Giulieri (https://evoluteur.github.io/)",
+  "license": "MIT",
+  "keywords": [
+    "sri-yantra",
+    "shri-yantra",
+    "sri-chakra",
+    "yantra",
+    "sacred-geometry",
+    "triangles",
+    "lotus",
+    "tantra",
+    "meditation",
+    "generator",
+    "svg",
+    "esoterica",
+    "pwa",
+    "javascript"
+  ]
+}

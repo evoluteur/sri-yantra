@@ -1,0 +1,40 @@
+.canvas-box {
+  background-color: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+}
+.canvas-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.canvas-box svg:hover {
+  fill: none;
+}
+.stage > .note {
+  margin: 10px 2px 0;
+}
+.layout.info {
+  margin-top: 0;
+}
+.side.wide {
+  flex: 1 1 340px;
+  max-width: 560px;
+}
+.enclosures {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.enclosures li {
+  margin-bottom: 4px;
+}
+.enclosures .sa {
+  color: var(--card-strong);
+}
+.enclosures .en {
+  opacity: 0.8;
+}
