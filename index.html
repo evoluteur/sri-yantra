@@ -30,20 +30,44 @@
     <script src="js/yantra.js"></script>
     <script>
       if ("serviceWorker" in navigator) {
-        addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+        addEventListener("load", () =>
+          navigator.serviceWorker.register("sw.js"),
+        );
       }
     </script>
   </head>
 
-  <body onload="setupPage('home'); initYantra();" id="omg-body">
+  <body
+    onload="
+      setupPage('home');
+      initYantra();
+    "
+    id="omg-body"
+  >
     <div id="omg-header">
       <h1>Sri Yantra</h1>
       <div id="omg-header-tools">
         <div id="omg-theme-picker"></div>
-        <a id="omg-github" href="https://github.com/evoluteur/sri-yantra" target="_blank" rel="noopener" title="Sri Yantra on GitHub" aria-label="Sri Yantra on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a
+          id="omg-github"
+          href="https://github.com/evoluteur/sri-yantra"
+          target="_blank"
+          rel="noopener"
+          title="Sri Yantra on GitHub"
+          aria-label="Sri Yantra on GitHub"
+          ><svg viewBox="0 0 16 16" aria-hidden="true">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+            /></svg
+        ></a>
       </div>
     </div>
-    <noscript><p class="tagline">Sri Yantra draws as SVG, so it needs JavaScript. Enable it to draw one, or read <a href="about.html">about the Sri Yantra</a>.</p></noscript>
+    <noscript
+      ><p class="tagline">
+        Sri Yantra draws as SVG, so it needs JavaScript. Enable it to draw one,
+        or read <a href="about.html">about the Sri Yantra</a>.
+      </p></noscript
+    >
     <h2>Nine triangles around a point</h2>
     <div class="content">
       <p class="tagline">
@@ -51,8 +75,8 @@
         tantric traditions: four upward triangles and five downward ones,
         interlaced around a central point and ringed by lotus petals, circles
         and a gated square. This one is drawn to scale in your browser. Change
-        the colors, build it up one triangle at a time, and save it.
-        New to the Sri Yantra? Read <a href="about.html">about it</a>.
+        the colors, build it up one triangle at a time, and save it. New to the
+        Sri Yantra? Read <a href="about.html">about it</a>.
       </p>
 
       <div class="layout">
@@ -65,29 +89,63 @@
           <div class="panel">
             <h3>Build it up</h3>
             <div class="ctl">
-              <label for="tri-n">Triangles drawn, smallest first</label><span class="val" id="tri-n-val"></span>
+              <label for="tri-n">Triangles drawn, smallest first</label
+              ><span class="val" id="tri-n-val"></span>
               <input type="range" id="tri-n" min="0" max="9" step="1" />
             </div>
-            <div class="chips" id="which-chips" role="group" aria-label="Which triangles"></div>
-            <div class="btns"><button type="button" id="play" class="ghost">Build it up</button></div>
+            <div
+              class="chips"
+              id="which-chips"
+              role="group"
+              aria-label="Which triangles"
+            ></div>
+            <div class="btns">
+              <button type="button" id="play" class="ghost">Build it up</button>
+            </div>
           </div>
 
           <div class="panel">
             <h3>Layers</h3>
-            <label class="opt"><input type="checkbox" id="l-bindu" /> Bindu (the central point)</label>
-            <label class="opt"><input type="checkbox" id="l-tri" /> The nine triangles</label>
-            <label class="opt"><input type="checkbox" id="l-lotus8" /> Eight-petal lotus</label>
-            <label class="opt"><input type="checkbox" id="l-lotus16" /> Sixteen-petal lotus</label>
-            <label class="opt"><input type="checkbox" id="l-circles" /> Circles</label>
-            <label class="opt"><input type="checkbox" id="l-gates" /> Square with four gates</label>
+            <label class="opt"
+              ><input type="checkbox" id="l-bindu" /> Bindu (the central
+              point)</label
+            >
+            <label class="opt"
+              ><input type="checkbox" id="l-tri" /> The nine triangles</label
+            >
+            <label class="opt"
+              ><input type="checkbox" id="l-lotus8" /> Eight-petal lotus</label
+            >
+            <label class="opt"
+              ><input type="checkbox" id="l-lotus16" /> Sixteen-petal
+              lotus</label
+            >
+            <label class="opt"
+              ><input type="checkbox" id="l-circles" /> Circles</label
+            >
+            <label class="opt"
+              ><input type="checkbox" id="l-gates" /> Square with four
+              gates</label
+            >
           </div>
 
           <div class="panel">
             <h3>Look</h3>
-            <div class="chips" id="pal-chips" role="group" aria-label="Colors"></div>
-            <div class="chips" id="fill-chips" role="group" aria-label="Fill"></div>
+            <div
+              class="chips"
+              id="pal-chips"
+              role="group"
+              aria-label="Colors"
+            ></div>
+            <div
+              class="chips"
+              id="fill-chips"
+              role="group"
+              aria-label="Fill"
+            ></div>
             <div class="ctl">
-              <label for="weight">Line weight</label><span class="val" id="weight-val"></span>
+              <label for="weight">Line weight</label
+              ><span class="val" id="weight-val"></span>
               <input type="range" id="weight" min="4" max="30" step="1" />
             </div>
           </div>
@@ -96,7 +154,9 @@
             <h3>Save</h3>
             <div class="btns">
               <button type="button" id="export-png">Download PNG</button>
-              <button type="button" id="export-svg" class="ghost">Download SVG</button>
+              <button type="button" id="export-svg" class="ghost">
+                Download SVG
+              </button>
             </div>
           </div>
         </div>
@@ -117,18 +177,17 @@
           <div class="panel">
             <h3>Shiva and Shakti</h3>
             <p class="note">
-              The four upward triangles are usually read as Shiva, the
-              masculine principle, and the five downward ones as Shakti, the
-              feminine. They meet at the bindu, where the two are said to be
-              one. Meanings vary between lineages, and there are several
-              schools of drawing.
+              The four upward triangles are usually read as Shiva, the masculine
+              principle, and the five downward ones as Shakti, the feminine.
+              They meet at the bindu, where the two are said to be one. Meanings
+              vary between lineages, and there are several schools of drawing.
             </p>
             <p class="note">
               This drawing takes its triangle coordinates from a published
               construction. The two largest triangles have their corners on the
-              circle, and the figure is symmetric left to right. Practitioners may prefer
-              other proportions, and a hand-drawn yantra is a matter of
-              practice and not just geometry.
+              circle, and the figure is symmetric left to right. Practitioners
+              may prefer other proportions, and a hand-drawn yantra is a matter
+              of practice and not just geometry.
             </p>
           </div>
         </div>
@@ -136,18 +195,59 @@
 
       <div class="footer">
         <p><a href="about.html">About the Sri Yantra</a></p>
-        <p>The code of this page is <a href="https://github.com/evoluteur/sri-yantra">Open source</a> with MIT license.</p>
-        <p>Triangle coordinates from <a href="https://texample.net/tikz/examples/sri-yantra/">TeXample</a> (CC BY-SA 4.0).</p>
-        <p>Had fun browsing the app? <a href="https://github.com/sponsors/evoluteur">Buy me a coffee by becoming a sponsor</a>.</p>
+        <p>
+          Triangle coordinates from
+          <a href="https://texample.net/tikz/examples/sri-yantra/">TeXample</a>
+          (CC BY-SA 4.0).
+        </p>
+        <p>
+          The code of this page is
+          <a href="https://github.com/evoluteur/sri-yantra">Open source</a> with
+          MIT license.
+        </p>
+        <p>
+          Had fun browsing the app?
+          <a href="https://github.com/sponsors/evoluteur"
+            >Buy me a coffee by becoming a sponsor</a
+          >.
+        </p>
         <p>
           You may also like
-          <a href="https://evoluteur.github.io/mandala-maker/" target="_blank" rel="noopener">Mandala Maker</a>,
-          <a href="https://evoluteur.github.io/sacred-geometry/" target="_blank" rel="noopener">Sacred Geometry</a>,
-          <a href="https://evoluteur.github.io/platonic-solids/" target="_blank" rel="noopener">Platonic Solids</a>,
-          and <a href="https://evoluteur.github.io/archimedean-solids/" target="_blank" rel="noopener">Archimedean Solids</a>.
-          See them all on <a href="https://evoluteur.github.io/esoterica.html" target="_blank" rel="noopener">Esoterica</a>.
+          <a
+            href="https://evoluteur.github.io/mandala-maker/"
+            target="_blank"
+            rel="noopener"
+            >Mandala Maker</a
+          >,
+          <a
+            href="https://evoluteur.github.io/sacred-geometry/"
+            target="_blank"
+            rel="noopener"
+            >Sacred Geometry</a
+          >,
+          <a
+            href="https://evoluteur.github.io/platonic-solids/"
+            target="_blank"
+            rel="noopener"
+            >Platonic Solids</a
+          >, and
+          <a
+            href="https://evoluteur.github.io/archimedean-solids/"
+            target="_blank"
+            rel="noopener"
+            >Archimedean Solids</a
+          >. See them all on
+          <a
+            href="https://evoluteur.github.io/esoterica.html"
+            target="_blank"
+            rel="noopener"
+            >Esoterica</a
+          >.
         </p>
-        <p class="copyright">&#169; 2026 <a href="https://evoluteur.github.io/">Olivier Giulieri</a></p>
+        <p class="copyright">
+          &#169; 2026
+          <a href="https://evoluteur.github.io/">Olivier Giulieri</a>
+        </p>
       </div>
     </div>
   </body>
