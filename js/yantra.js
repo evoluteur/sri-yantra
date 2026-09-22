@@ -9,6 +9,11 @@ const PALETTES = [
   { id: "temple", label: "Temple", bg: "#fbf1dc", line: "#4a1f0c", shiva: "#e59a1a", shakti: "#b3261e", lotus8: "#e8892f", lotus16: "#f3c45a", gate: "#8c3b1e", bindu: "#b3261e" },
   { id: "night", label: "Night", bg: "#0f1220", line: "#d6dcff", shiva: "#6f8dff", shakti: "#c076ff", lotus8: "#4d68d8", lotus16: "#8b6ee8", gate: "#5b6fbf", bindu: "#ffd76a" },
   { id: "ink", label: "Ink", bg: "#ffffff", line: "#141414", shiva: "#9a9a9a", shakti: "#4a4a4a", lotus8: "#7a7a7a", lotus16: "#b5b5b5", gate: "#666666", bindu: "#141414" },
+  { id: "saffron", label: "Saffron", bg: "#2b0f0f", line: "#f7dfb0", shiva: "#f0973a", shakti: "#c81d3f", lotus8: "#d9822b", lotus16: "#f2b545", gate: "#8c2f1f", bindu: "#ffce54" },
+  { id: "emerald", label: "Emerald", bg: "#0b1f18", line: "#dff5e6", shiva: "#38b28a", shakti: "#1f7a4c", lotus8: "#3f9d6b", lotus16: "#7fd2a0", gate: "#2f6b52", bindu: "#ffe27a" },
+  { id: "slate", label: "Slate", bg: "#14171c", line: "#eef0f3", shiva: "#9aa4b2", shakti: "#5f6b7a", lotus8: "#7c8794", lotus16: "#b4bcc6", gate: "#3f4750", bindu: "#ffffff" },
+  { id: "parchment", label: "Parchment", bg: "#f2e6c9", line: "#4a3419", shiva: "#9a6a30", shakti: "#7a4420", lotus8: "#b5872f", lotus16: "#d4b26a", gate: "#5c3d1e", bindu: "#8a1f1f" },
+  { id: "rose", label: "Rose", bg: "#22131f", line: "#ffe6ef", shiva: "#e8829e", shakti: "#b84f80", lotus8: "#d97398", lotus16: "#f0aac2", gate: "#8a3f66", bindu: "#fff2df" },
 ];
 const FILLS = [
   { id: "filled", label: "Filled" },

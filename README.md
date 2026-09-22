@@ -12,7 +12,7 @@ The Sri Yantra is the best known of the sacred diagrams of the Indian tantric tr
 
 - **Build it up**: a slider draws the triangles from the smallest to the largest, and a button plays it as an animation. Show only the upward or only the downward triangles if you like.
 - **Layers**: the bindu, the nine triangles, the eight-petal lotus, the sixteen-petal lotus, the circles and the square with four gates can each be switched on and off.
-- **Look**: gold, temple, night or ink colors, filled or in outline, and a line weight slider.
+- **Look**: nine color palettes (gold, temple, night, ink, saffron, emerald, slate, parchment, rose), filled or in outline, and a line weight slider.
 - **Save**: **Download PNG** (2000 pixels square) or **Download SVG**.
 
 The page also lists the nine enclosures (avaranas) from the outside in, with their Sanskrit names and their usual glosses.
