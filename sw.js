@@ -1,4 +1,4 @@
-const CACHE = "sri-yantra-v2";
+const CACHE = "sri-yantra-v3";
 const ASSETS = [
   "./",
   "index.html",
