@@ -16,6 +16,9 @@
 .stage > .note {
   margin: 10px 2px 0;
 }
+.stage > .panel {
+  margin-top: 16px;
+}
 .layout.info {
   margin-top: 0;
 }
@@ -37,4 +40,8 @@
 }
 .enclosures .en {
   opacity: 0.8;
+}
+/* the intro spans the drawing and the controls below it (stage + gap + side) */
+.content > .tagline {
+  max-width: calc(720px + 24px + 420px);
 }
